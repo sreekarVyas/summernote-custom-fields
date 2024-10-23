@@ -158,29 +158,19 @@
                   html +=
                     '<div class="row mb-3">' +
                     '<div class="col-auto">' +
-                    '<span class="form-text">Option ' +
-                    (i + 1) +
-                    "</span>" +
+                    `<span class="form-text">Option ${(i + 1)} </span>` +
                     "</div>" +
                     '<div class="col-auto">' +
-                    '<label for="option-' +
-                    (i + 1) +
-                    '-label" class="col-form-label">Label</label>' +
+                    `<label for="option-${(i + 1)}-label" class="col-form-label">Label</label>` +
                     "</div>" +
                     '<div class="col-sm-3">' +
-                    '<input type="text" id="option-' +
-                    (i + 1) +
-                    '-label" class="form-control form-control-sm">' +
+                    `<input type="text" id="option-${(i + 1)}-label" class="form-control form-control-sm">` +
                     "</div>" +
                     '<div class="col-auto">' +
-                    '<label for="option-' +
-                    (i + 1) +
-                    '-value" class="col-form-label">Value</label>' +
+                    `<label for="option-${(i + 1)}-value" class="col-form-label">Value</label>` +
                     "</div>" +
                     '<div class="col-sm-3">' +
-                    '<input type="text" id="option-' +
-                    (i + 1) +
-                    '-value" class="form-control form-control-sm">' +
+                    `<input type="text" id="option-${(i + 1)}-value" class="form-control form-control-sm">` +
                     "</div>" +
                     "</div>";
                 }
@@ -196,8 +186,8 @@
                 context.invoke(
                   "editor.insertNode",
                   $("<label>", {
-                    for: $dialog.find("#option-" + (i + 1)).val(),
-                    html: $dialog.find("#option-" + (i + 1) + "-label").val(),
+                    for: $dialog.find(`#option-${(i + 1)}`).val(),
+                    html: $dialog.find(`#option-${(i + 1)}-label`).val(),
                   })[0]
                 );
                 context.invoke(
@@ -262,19 +252,13 @@
                   html +=
                     '<div class="row mb-3">' +
                     '<div class="col-auto">' +
-                    '<span class="form-text">Option ' +
-                    (i + 1) +
-                    "</span>" +
+                    `<span class="form-text"> Option ${(i + 1)}</span>` +
                     "</div>" +
                     '<div class="col-auto">' +
-                    '<label for="option-' +
-                    (i + 1) +
-                    '-check-parameter" class="col-form-label">Check Parameter</label>' +
+                    `<label for="option-${(i + 1)}-check-parameter" class="col-form-label">Check Parameter</label>` +
                     "</div>" +
                     '<div class="col-sm-3">' +
-                    '<input type="text" id="option-' +
-                    (i + 1) +
-                    '-check-parameter" class="form-control form-control-sm">' +
+                    `<input type="text" id="option-${(i + 1)}-check-parameter" class="form-control form-control-sm">` +
                     "</div>" +
                     "</div>";
                 }
@@ -301,10 +285,10 @@
                   "editor.insertNode",
                   $("<input>", {
                     type: "checkbox",
-                    id: $dialog.find("#option-" + (i + 1)).val(),
+                    id: $dialog.find(`#option-${(i + 1)}`).val(),
                     class: "custom-field custom-field-checkboxes",
                     name: $dialog.find("#checkboxes-group-name").val(),
-                    value: $dialog.find("#option-" + (i + 1) + "-check-parameter").val(),
+                    value: $dialog.find(`#option-${(i + 1)}-check-parameter`).val(),
                   })[0]
                 );
                 context.invoke("editor.insertNode", $("<br>")[0]);
@@ -323,3 +307,4 @@
     },
   });
 });
+
